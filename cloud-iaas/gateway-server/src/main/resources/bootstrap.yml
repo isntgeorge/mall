@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    nacos:
+      server-addr: 143.198.48.33:8848
+      username: nacos
+      password: nacos
+      discovery:
+        namespace: 94820aba-aaea-4638-aa4e-f785ece0972b
+        group: DEV_GROUP
+        service: ${spring.application.name}
+      config:
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        group: ${spring.cloud.nacos.discovery.group}
+        prefix: ${spring.application.name}
+        file-extension: yml
+  profiles:
+    active: dev
